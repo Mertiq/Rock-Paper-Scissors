@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+
+    <div class="genel">
+
+        <div class="sonuc_ekrani" >
+  
+          <p class = "yazi" id="by">Bilgisayarın yaptığı: </p>
+           
+          <p class = "yazi" id="s">Sonuc: </p>
+  
+        </div>
+  
+        <div class ="fotolar">
+          
+          <div class="ustfotolar">
+  
+            <button class="tas" onclick="onclicks('tas')" > <img class="yuvarla" src="Photos/tas.jpg" alt=""/></button>
+
+            <button class="kagit" onclick="onclicks('kagit')"> <img class="yuvarla" src="Photos/kagit.jpg" alt=""/></button>
+  
+          </div>
+  
+          <div class="altfotolar">
+          
+            <button class="makas" onclick="onclicks('makas')"> <img class="yuvarla" src="Photos/makas.jpg" alt=""/></button>
+  
+          </div>
+  
+        </div>
+       
+      </div>
+
+    <script>
+
+        let sonuc
+        let a
+
+        function blgsonucu(x){
+            if(x === 1)
+            {
+            return "TAŞ"
+            }
+            else if (x === 2)
+            {
+            return "KAĞIT"
+            }
+            else if (x === 3)
+            {
+            return "MAKAS"
+            }
+        }
+
+        function onclicks(x){
+
+            const blgsonuc = Math.floor((Math.random() * 3) + 1);
+
+            
+
+            if(x ==="tas" && blgsonuc === 1)
+            {
+            sonuc = "BERABERE"
+            }
+            else if(x ==="tas" && blgsonuc === 2)
+            {
+            sonuc = "BİLGİSAYAR KAZANDI"
+            }
+            else if(x ==="tas" && blgsonuc === 3)
+            {
+            sonuc = "SEN KAZANDIN"
+            }
+            else if(x ==="kagit" && blgsonuc === 1)
+            {
+            sonuc = "SEN KAZANDIN"
+            }
+            else if(x ==="kagit" && blgsonuc === 2)
+            {
+            sonuc = "BERABERE"
+            }
+            else if(x ==="kagit" && blgsonuc === 3)
+            {
+            sonuc = "BİLGİSAYAR KAZANDI"
+            }
+            else if(x ==="makas" && blgsonuc === 1)
+            {
+            sonuc = "BİLGİSAYAR KAZANDI"
+            }
+            else if(x ==="makas" && blgsonuc === 2)
+            {
+            sonuc = "SEN KAZANDIN"
+            }
+            else if(x ==="makas" && blgsonuc === 3)
+            {
+              sonuc = "BERABERE"
+            }
+            
+            a = blgsonuc
+            document.querySelector("#by").innerText = "Bilgisayarın yaptığı: " + blgsonucu(a)
+            document.querySelector("#s").innerText = "Sonuc: " + sonuc
+        }  
+
+    </script>
+</body>
